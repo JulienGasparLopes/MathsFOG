@@ -37,6 +37,24 @@ public class Vertex4f {
 	}
 	
 	/**
+	 * Create a Vertex4f using a Vertex3f<br>
+	 * (copy x, y and z components, set w to 0)
+	 * @param v : Vertex3f to use
+	 */
+	public Vertex4f(Vertex3f v) {
+		this(v.x, v.y, v.z, 0);
+	}
+	
+	/**
+	 * Create a Vertex4f using a Vertex2f<br>
+	 * (copy x, and y components, set z and w to 0)
+	 * @param v : Vertex3f to use
+	 */
+	public Vertex4f(Vertex2f v) {
+		this(v.x, v.y, 0, 0);
+	}
+	
+	/**
 	 * Output "Vertex4f(x,y,z,w)"
 	 */
 	public String toString() {

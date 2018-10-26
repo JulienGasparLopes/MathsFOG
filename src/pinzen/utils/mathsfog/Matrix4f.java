@@ -147,6 +147,16 @@ public class Matrix4f {
 	}
 	
 	/**
+	 * Create a translation Matrix4f using a translation Vertex2f for 2D<br>
+	 * (stored in m14,m24,m34)
+	 * @param transVector : the translation vector
+	 * @return new translation Matrix4f
+	 */
+	public static Matrix4f getTranslationMatrix(Vertex2f transVector) {
+		return Matrix4f.getTranslationMatrix(new Vertex3f(transVector));
+	}
+	
+	/**
 	 * Create a scaling Matrix4f using a scaling Vertex3f (stored in m11,m22,m33)
 	 * @param scaleVector : the scaling vector
 	 * @return new scaling Matrix4f
@@ -158,6 +168,16 @@ public class Matrix4f {
 		m.set(3, 3, scaleVector.z);
 		
 		return m;
+	}
+	
+	/**
+	 * Create a scaling Matrix4f using a scaling Vertex2f for 2D<br>
+	 * (stored in m11,m22,m33)
+	 * @param scaleVector : the scaling vector
+	 * @return new scaling Matrix4f
+	 */
+	public static Matrix4f getScalingMatrix(Vertex2f scaleVector) {
+		return Matrix4f.getScalingMatrix(new Vertex3f(scaleVector));
 	}
 	
 	/**
@@ -258,9 +278,9 @@ public class Matrix4f {
 	}
 	
 	/**
-	 * Translate a Matrix4f using a translation Matrix4f
+	 * Translate a Matrix4f using a translation Vertex3f
 	 * @param origin : the Matrix4f to translate
-	 * @param trans : translation Matrix4f
+	 * @param trans : translation Vertex3f
 	 * @return new translated Matrix4f
 	 */
 	public static Matrix4f translate(Matrix4f origin, Vertex3f trans) {
@@ -269,9 +289,19 @@ public class Matrix4f {
 	}
 	
 	/**
-	 * Rotate a Matrix4f using a rotation Matrix4f and an angle in degrees
+	 * Translate a Matrix4f using a translation Vertex2f for 2D
+	 * @param origin : the Matrix4f to translate
+	 * @param trans : translation Vertex2f
+	 * @return new translated Matrix4f
+	 */
+	public static Matrix4f translate(Matrix4f origin, Vertex2f trans) {
+		return Matrix4f.translate(origin, new Vertex3f(trans));
+	}
+	
+	/**
+	 * Rotate a Matrix4f using a rotation Vertex3f and an angle in degrees
 	 * @param origin : the Matrix4f to rotate
-	 * @param rot : rotation Matrix4f
+	 * @param rot : rotation Vertex3f
 	 * @param angle : angle of rotation in degrees
 	 * @return new rotated Matrix4f
 	 */
@@ -281,14 +311,24 @@ public class Matrix4f {
 	}
 	
 	/**
-	 * Scale a Matrix4f using a scaling Matrix4f
+	 * Scale a Matrix4f using a scaling Vertex3f
 	 * @param origin : the Matrix4f to scale
-	 * @param scales : scaling Matrix4f
+	 * @param scales : scaling Vertex3f
 	 * @return new scaled Matrix4f
 	 */
 	public static Matrix4f scale(Matrix4f origin, Vertex3f scales) {
 		Matrix4f scaleMat = getScalingMatrix(scales);
 		return mult(scaleMat, origin);
+	}
+	
+	/**
+	 * Scale a Matrix4f using a scaling Vertex2f for 2D
+	 * @param origin : the Matrix4f to scale
+	 * @param scales : scaling Vertex2f
+	 * @return new scaled Matrix4f
+	 */
+	public static Matrix4f scale(Matrix4f origin, Vertex2f scales) {
+		return Matrix4f.scale(origin, new Vertex3f(scales));
 	}
 	
 	/**

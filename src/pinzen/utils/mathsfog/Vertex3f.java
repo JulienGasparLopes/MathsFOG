@@ -35,6 +35,14 @@ public class Vertex3f {
 	}
 	
 	/**
+	 * Create a Vertex3f using Vertex2f (copy x and y, set z to 0)
+	 * @param v : Vertex2f to use
+	 */
+	public Vertex3f(Vertex2f v) {
+		this(v.x, v.y, 0);
+	}
+	
+	/**
 	 * Output "Vertex3f(x,y,z)"
 	 */
 	public String toString() {
