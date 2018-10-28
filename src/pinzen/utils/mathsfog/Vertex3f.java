@@ -43,6 +43,13 @@ public class Vertex3f {
 	}
 	
 	/**
+	 * Clone this Vertex3f (return a new Vertex3f with the same components)
+	 */
+	public Vertex3f clone() {
+		return new Vertex3f(x,y,z);
+	}
+	
+	/**
 	 * Output "Vertex3f(x,y,z)"
 	 */
 	public String toString() {

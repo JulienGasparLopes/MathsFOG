@@ -55,6 +55,13 @@ public class Vertex4f {
 	}
 	
 	/**
+	 * Clone this Vertex4f (return a new Vertex4f with the same components)
+	 */
+	public Vertex4f clone() {
+		return new Vertex4f(x,y,z,w);
+	}
+	
+	/**
 	 * Output "Vertex4f(x,y,z,w)"
 	 */
 	public String toString() {

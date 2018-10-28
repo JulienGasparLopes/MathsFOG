@@ -33,6 +33,13 @@ public class Vertex2f {
 	}
 	
 	/**
+	 * Clone this Vertex2f (return a new Vertex2f with the same components)
+	 */
+	public Vertex2f clone() {
+		return new Vertex2f(x,y);
+	}
+	
+	/**
 	 * Output "Vertex2f(x,y)"
 	 */
 	public String toString() {
