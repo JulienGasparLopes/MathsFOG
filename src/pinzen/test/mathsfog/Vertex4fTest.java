@@ -47,14 +47,14 @@ class Vertex4fTest {
 		Vertex4f v1 = new Vertex4f(1,2,3,4);
 		Vertex4f v2 = new Vertex4f(2,3,4,5);
 		
-		Vertex4f v3 = Vertex4f.Translate(v1, v2);
+		Vertex4f v3 = Vertex4f.translate(v1, v2);
 		
 		assertVertex4fEquals(v3, 3, 5, 7, 9);
 	}
 	
 	@Test
 	void testNormalization() {
-		Vertex4f v1 = Vertex4f.Normalize(new Vertex4f(4, 6, 56, -3));
+		Vertex4f v1 = Vertex4f.normalize(new Vertex4f(4, 6, 56, -3));
 		
 		assertEquals(v1.norm(), 1);
 	}

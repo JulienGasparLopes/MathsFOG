@@ -46,14 +46,14 @@ class Vertex3fTest {
 		Vertex3f v1 = new Vertex3f(1,2,3);
 		Vertex3f v2 = new Vertex3f(2,3,4);
 		
-		Vertex3f v3 = Vertex3f.Translate(v1, v2);
+		Vertex3f v3 = Vertex3f.translate(v1, v2);
 		
 		assertVertex3fEquals(v3, 3, 5, 7);
 	}
 	
 	@Test
 	void testNormalization() {
-		Vertex3f v1 = Vertex3f.Normalize(new Vertex3f(4, 6, 56));
+		Vertex3f v1 = Vertex3f.normalize(new Vertex3f(4, 6, 56));
 		
 		assertEquals(v1.norm(), 1);
 	}

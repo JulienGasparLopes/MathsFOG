@@ -93,7 +93,7 @@ public class Vertex4f {
 	 * @param s : scale value
 	 * @return new scaled Vertex4f
 	 */
-	public static Vertex4f Scale(Vertex4f v, float s) {
+	public static Vertex4f scale(Vertex4f v, float s) {
 		return new Vertex4f(v.x*s, v.y*s, v.z*s, v.w*s);
 	}
 	
@@ -103,7 +103,7 @@ public class Vertex4f {
 	 * @param trans : translation vector
 	 * @return new translated Vertex4f
 	 */
-	public static Vertex4f Translate(Vertex4f origin, Vertex4f trans) {
+	public static Vertex4f translate(Vertex4f origin, Vertex4f trans) {
 		return new Vertex4f(origin.x+trans.x, origin.y+trans.y, origin.z+trans.z, origin.w+trans.w);
 	}
 	
@@ -112,7 +112,17 @@ public class Vertex4f {
 	 * @param v : Vertex4f to normalize
 	 * @return new normalized Vertex4f
 	 */
-	public static Vertex4f Normalize(Vertex4f v) {
-		return Scale(v, 1/v.norm());
+	public static Vertex4f normalize(Vertex4f v) {
+		return scale(v, 1/v.norm());
+	}
+	
+	/**
+	 * Difference between 2 Vertex4f
+	 * @param v1 : Vertex4f
+	 * @param v2 : Vertex4f
+	 * @return new Vertex4f representing v2 - v1
+	 */
+	public static Vertex4f difference(Vertex4f v1, Vertex4f v2) {
+		return new Vertex4f(v2.x - v1.x, v2.y - v1.y, v2.z - v1.z, v2.w - v1.w);
 	}
 }

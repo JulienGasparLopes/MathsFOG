@@ -76,7 +76,7 @@ public class Vertex2f {
 	 * @param s : scale value
 	 * @return new scaled Vertex2f
 	 */
-	public static Vertex2f Scale(Vertex2f v, float s) {
+	public static Vertex2f scale(Vertex2f v, float s) {
 		return new Vertex2f(v.x*s, v.y*s);
 	}
 	
@@ -86,7 +86,7 @@ public class Vertex2f {
 	 * @param trans : translation vector
 	 * @return new translated Vertex2f
 	 */
-	public static Vertex2f Translate(Vertex2f origin, Vertex2f trans) {
+	public static Vertex2f translate(Vertex2f origin, Vertex2f trans) {
 		return new Vertex2f(origin.x+trans.x, origin.y+trans.y);
 	}
 	
@@ -95,7 +95,17 @@ public class Vertex2f {
 	 * @param v : Vertex2f to normalize
 	 * @return new normalized Vertex2f
 	 */
-	public static Vertex2f Normalize(Vertex2f v) {
-		return Scale(v, 1/v.norm());
+	public static Vertex2f normalize(Vertex2f v) {
+		return scale(v, 1/v.norm());
+	}
+	
+	/**
+	 * Difference between 2 Vertex2f
+	 * @param v1 : Vertex2f
+	 * @param v2 : Vertex2f
+	 * @return new Vertex2f representing v2 - v1
+	 */
+	public static Vertex2f difference(Vertex2f v1, Vertex2f v2) {
+		return new Vertex2f(v2.x - v1.x, v2.y - v1.y);
 	}
 }

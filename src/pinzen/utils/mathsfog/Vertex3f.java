@@ -85,7 +85,7 @@ public class Vertex3f {
 	 * @param s : scale value
 	 * @return new scaled Vertex3f
 	 */
-	public static Vertex3f Scale(Vertex3f v, float s) {
+	public static Vertex3f scale(Vertex3f v, float s) {
 		return new Vertex3f(v.x*s, v.y*s, v.z*s);
 	}
 	
@@ -95,7 +95,7 @@ public class Vertex3f {
 	 * @param trans : translation vector
 	 * @return new translated Vertex3f
 	 */
-	public static Vertex3f Translate(Vertex3f origin, Vertex3f trans) {
+	public static Vertex3f translate(Vertex3f origin, Vertex3f trans) {
 		return new Vertex3f(origin.x+trans.x, origin.y+trans.y, origin.z+trans.z);
 	}
 	
@@ -104,7 +104,17 @@ public class Vertex3f {
 	 * @param v : Vertex3f to normalize
 	 * @return new normalized Vertex3f
 	 */
-	public static Vertex3f Normalize(Vertex3f v) {
-		return Scale(v, 1/v.norm());
+	public static Vertex3f normalize(Vertex3f v) {
+		return scale(v, 1/v.norm());
+	}
+	
+	/**
+	 * Difference between 2 Vertex3f
+	 * @param v1 : Vertex3f
+	 * @param v2 : Vertex3f
+	 * @return new Vertex3f representing v2 - v1
+	 */
+	public static Vertex3f difference(Vertex3f v1, Vertex3f v2) {
+		return new Vertex3f(v2.x - v1.x, v2.y - v1.y, v2.z - v1.z);
 	}
 }

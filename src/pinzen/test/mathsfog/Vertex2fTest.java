@@ -43,14 +43,14 @@ class Vertex2fTest {
 		Vertex2f v1 = new Vertex2f(1,2);
 		Vertex2f v2 = new Vertex2f(2,3);
 		
-		Vertex2f v3 = Vertex2f.Translate(v1, v2);
+		Vertex2f v3 = Vertex2f.translate(v1, v2);
 		
 		assertVertex2fEquals(v3, 3, 5);
 	}
 	
 	@Test
 	void testNormalization() {
-		Vertex2f v1 = Vertex2f.Normalize(new Vertex2f(4, 6));
+		Vertex2f v1 = Vertex2f.normalize(new Vertex2f(4, 6));
 		
 		assertEquals(v1.norm(), 1);
 	}
