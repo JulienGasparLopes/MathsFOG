@@ -117,4 +117,13 @@ public class Vertex3f {
 	public static Vertex3f difference(Vertex3f v1, Vertex3f v2) {
 		return new Vertex3f(v2.x - v1.x, v2.y - v1.y, v2.z - v1.z);
 	}
+	
+	/**
+	 * Invert a Vertex3f (negate its components)
+	 * @param v : Vertex3f to invert
+	 * @return a new Vertex3f(-x, -y, -z)
+	 */
+	public static Vertex3f invert(Vertex3f v) {
+		return new Vertex3f(-v.x, -v.y, -v.z);
+	}
 }

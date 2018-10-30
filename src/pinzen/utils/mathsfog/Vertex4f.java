@@ -125,4 +125,13 @@ public class Vertex4f {
 	public static Vertex4f difference(Vertex4f v1, Vertex4f v2) {
 		return new Vertex4f(v2.x - v1.x, v2.y - v1.y, v2.z - v1.z, v2.w - v1.w);
 	}
+	
+	/**
+	 * Invert a Vertex4f (negate its components)
+	 * @param v : Vertex4f to invert
+	 * @return a new Vertex4f(-x, -y, -z, -w)
+	 */
+	public static Vertex4f invert(Vertex4f v) {
+		return new Vertex4f(-v.x, -v.y, -v.z, -v.w);
+	}
 }

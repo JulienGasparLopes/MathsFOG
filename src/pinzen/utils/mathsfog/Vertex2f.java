@@ -108,4 +108,13 @@ public class Vertex2f {
 	public static Vertex2f difference(Vertex2f v1, Vertex2f v2) {
 		return new Vertex2f(v2.x - v1.x, v2.y - v1.y);
 	}
+	
+	/**
+	 * Invert a Vertex2f (negate its components)
+	 * @param v : Vertex2f to invert
+	 * @return a new Vertex2f(-x, -y)
+	 */
+	public static Vertex2f invert(Vertex2f v) {
+		return new Vertex2f(-v.x, -v.y);
+	}
 }
