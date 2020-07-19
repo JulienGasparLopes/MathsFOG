@@ -35,7 +35,7 @@ class Vertex2fTest {
 	void testNorm() {
 		Vertex2f v1 = new Vertex2f(1,2);
 		
-		assertEquals(v1.norm(), (float)Math.sqrt(5));
+		assertEquals(v1.getNorm(), (float)Math.sqrt(5));
 	}
 
 	@Test
@@ -52,6 +52,6 @@ class Vertex2fTest {
 	void testNormalization() {
 		Vertex2f v1 = Vertex2f.normalize(new Vertex2f(4, 6));
 		
-		assertEquals(v1.norm(), 1);
+		assertEquals(v1.getNorm(), 1);
 	}
 }
