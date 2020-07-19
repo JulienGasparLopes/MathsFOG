@@ -81,6 +81,27 @@ public class Vertex4f {
 		return index == 1 ? x : index == 2 ? y : index == 3 ? z : w;
 	}
 	
+	/**
+	 * Set one element of the vector<br>
+	 * Useful when iterating over a Vertex4f <br>
+	 * NB : follows maths convention (x=1, y=2, z=3, w=4) 
+	 * @param index : index of the element
+	 * @param value : new value of x or y element
+	 */
+	public void set(int index, float value) {
+		if(index<1 || index>4)
+			throw new ArrayIndexOutOfBoundsException("Can't reach Vertex2f[" + index + "]");
+		
+		if(index == 1)
+			this.x = value;
+		else if(index == 2)
+			this.y = value;
+		else if(index == 3)
+			this.z = value;
+		else if(index == 4)
+			this.w = value;
+	}
+	
 	public float norm() {
 		return (float)Math.sqrt(x*x + y*y + z*z + w*w);
 	}

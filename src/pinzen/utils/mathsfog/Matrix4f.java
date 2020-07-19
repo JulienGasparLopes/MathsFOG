@@ -253,6 +253,23 @@ public class Matrix4f {
 		return m;
 	}
 	
+	public static Matrix4f getPerspective(float fov, float aspect, float zNear, float zFar) {
+		Matrix4f m = new Matrix4f();
+		
+		float tanFov = (float)Math.tan(fov / 2f * Math.PI / 180f);
+		
+		m.set(1, 1, 1f / (aspect * tanFov));
+		m.set(2, 2, 1f / (tanFov));
+		m.set(3, 3, (-zNear - zFar) / (zNear - zFar));
+		m.set(4, 4, 0f);
+		
+		m.set(3, 4, (2f * zFar * zNear) / (zNear - zFar));
+		
+		m.set(4, 3, 1f);
+		
+		return m;
+	}
+	
 	/**
 	 * Multiply two Matrix4f
 	 * @param left : left Matrix4f to multiply

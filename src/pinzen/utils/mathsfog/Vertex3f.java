@@ -70,6 +70,25 @@ public class Vertex3f {
 	}
 	
 	/**
+	 * Set one element of the vector<br>
+	 * Useful when iterating over a Vertex3f <br>
+	 * NB : follows maths convention (x=1, y=2, z=3) 
+	 * @param index : index of the element
+	 * @param value : new value of x or y element
+	 */
+	public void set(int index, float value) {
+		if(index<1 || index>3)
+			throw new ArrayIndexOutOfBoundsException("Can't reach Vertex2f[" + index + "]");
+		
+		if(index == 1)
+			this.x = value;
+		else if(index == 2)
+			this.y = value;
+		else if(index == 3)
+			this.z = value;
+	}
+	
+	/**
 	 * Get norm (or magnitude) of the Vector
 	 * @return norm's value
 	 */
